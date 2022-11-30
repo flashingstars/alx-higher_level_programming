@@ -1,13 +1,9 @@
-#include <lists.h>
-
+#include "lists.h"
 /**
  * check_cycle - checks for a cycle in a linked list
- *
  * @list: head of the list
- *
- * Return: 1 on success, 0 on failure
+ * Return: 0 on failure, 1 on success
  */
-
 int check_cycle(listint_t *list)
 {
 	listint_t *slow = list;
@@ -19,7 +15,9 @@ int check_cycle(listint_t *list)
 		fast = fast->next->next;
 
 		if (slow == fast)
+		{
 			return (1);
+		}
 	}
 	return (0);
 }
