@@ -5,7 +5,7 @@
  *
  * @list: head of the list
  *
- * Return: 0 on success, 1 on failure
+ * Return: 1 on success, 0 on failure
  */
 
 int check_cycle(list_t *list)
@@ -13,15 +13,13 @@ int check_cycle(list_t *list)
 	listint_t *slow = list;
 	listint_t *fast = list;
 
-	if (list == NULL)
-		return (1);
-	while (slow->next && fast->next->next)
+	while (slow != NULL && fast->next && fast->next->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
 
 		if (slow == fast)
-			return (0);
+			return (1);
 	}
 	return (0);
 }
