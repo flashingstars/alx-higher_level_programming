@@ -20,4 +20,4 @@ if __name__ == "__main__":
 
     # Make the API request
     response = requests.get(url, headers=headers, auth=auth)
-    print(response.json()["id"])
+    print(response.json().get("id"))
