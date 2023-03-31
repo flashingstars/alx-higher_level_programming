@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-# A script to open a URL
+""" A script to open a URL """
 
-from urllib.request import urlopen
+import urllib.request
 
 if __name__ == "__main__":
-    with urlopen("https://alx-intranet.hbtn.io/status") as f:
-        body = f.read()
-    print('Body response:')
-    print(f'    - type: {type(body)}')
-    print(f'    - content: {body}')
-    print(f'    - utf8 content: {body.decode("utf-8")}')
+    request = urllib.request.Request("https://alx-intranet.hbtn.io/status")
+    with urllib.request.urlopen(request) as response:
+        body = response.read()
+        print('Body response:')
+        print('\t- type: {}'.format(type(body)))
+        print('\t- content: {}'.format(body))
+        print('\t- utf8 content: {}'.format(body.decode("utf-8")))
