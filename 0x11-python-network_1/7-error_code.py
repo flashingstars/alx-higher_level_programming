@@ -13,4 +13,3 @@ if __name__ == "__main__":
     except requests.exceptions.HTTPError as err:
         if response.status_code >= 400:
             print(f'Error code: {response.status_code}')
-            print(type(response.status_code))
