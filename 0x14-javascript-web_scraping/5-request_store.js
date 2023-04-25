@@ -8,7 +8,7 @@ const url = process.argv[2];
 
 require(url, (err, res, body) => {
   if (err) console.error(err);
-  fs.writeFile(filepath, body, err => {
+  fs.writeFile(filepath, body, {
     if (err) console.error(err);
   });
 });
