@@ -1,3 +1,3 @@
 $(document).ready($('#add_item').click(()=>{
-    $('UL.my_list').append('<li>Item</li>')
+    $('ul.my_list').append('<li>Item</li>')
 }));
